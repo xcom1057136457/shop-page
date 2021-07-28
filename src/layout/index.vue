@@ -134,7 +134,7 @@
               <div
                 class="
                   absolute
-                  z-10
+                  z-20
                   hidden
                   text-sm
                   font-normal
@@ -165,7 +165,7 @@
                 class="
                   absolute
                   inset-x-0
-                  z-10
+                  z-20
                   hidden
                   overflow-hidden
                   bg-white
@@ -313,7 +313,7 @@
                   top-full
                   bg-white
                   -left-60
-                  z-10
+                  z-20
                   text-sm
                   font-normal
                   border border-gray-200
@@ -404,7 +404,7 @@
               <div
                 class="
                   absolute
-                  z-10
+                  z-20
                   hidden
                   text-sm
                   font-normal
