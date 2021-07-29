@@ -350,6 +350,115 @@
         <a href="javascript:;" class="relative">Discover more</a>
       </div>
     </div>
+
+    <div class="py-24 summer-collection">
+      <div class="mx-auto my-0 flex">
+        <div class="flex-1"></div>
+        <div class="flex-1">
+          <h3 class="mb-8 text-3xl font-bold">
+            Get -50% from
+            <br />
+            Summer Collection
+          </h3>
+          <div class="mb-12 flex items-start">
+            <div>
+              <div class="text-5xl text-red-500 mb-2">0-205</div>
+              <div class="uppercase text-center text-gray-600 text-xs font-bold"
+                >DAYS</div
+              >
+            </div>
+
+            <div class="text-5xl text-red-500 px-4">:</div>
+
+            <div>
+              <div class="text-5xl text-red-500 mb-2">0-24</div>
+              <div class="uppercase text-center text-gray-600 text-xs font-bold"
+                >HOURS</div
+              >
+            </div>
+
+            <div class="text-5xl text-red-500 px-4">:</div>
+
+            <div>
+              <div class="text-5xl text-red-500 mb-2">0-48</div>
+              <div class="uppercase text-center text-gray-600 text-xs font-bold"
+                >MINUTES</div
+              >
+            </div>
+
+            <div class="text-5xl text-red-500 px-4">:</div>
+
+            <div>
+              <div class="text-5xl text-red-500 mb-2">0-23</div>
+              <div class="uppercase text-center text-gray-600 text-xs font-bold"
+                >SECONDS</div
+              >
+            </div>
+          </div>
+          <div
+            class="
+              inline-block
+              bg-black
+              py-3
+              text-white
+              cursor-pointer
+              summer-button
+              transition-all
+            "
+          >
+            <span class="transition-all">Shop Now</span>
+            <span class="iconfont icon-cc-arrow-right ml-3"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-24">
+      <div class="uppercase text-sm text-gray-500 font-bold text-center mb-4"
+        >WHAT BUYERS SAY</div
+      >
+      <div class="text-4xl text-black font-bold text-center mb-16"
+        >Latest buyers Reviews</div
+      >
+      <swiper
+        :slidesPerView="'auto'"
+        :centeredSlides="true"
+        :pagination="{
+          clickable: true
+        }"
+        :spaceBetween="30"
+        class="mySwiper h-full mx-auto my-0 px-1"
+      >
+        <swiper-slide
+          v-for="item in latestBuyers"
+          :key="item.id"
+          class="border border-gray-200 p-6"
+        >
+          <div>
+            <div class="top-detail flex mb-6">
+              <div
+                class="left-image overflow-hidden mr-4"
+                style="width: 69px; height: 69px"
+              >
+                <img :src="item.image" alt="" class="h-full w-full" />
+              </div>
+
+              <div class="right-detail ml-4 flex flex-col justify-between">
+                <div class="text-sm text-gray-400"> {{ item.productType }}</div>
+                <div class="text-base font-bold">{{ item.productName }}</div>
+                <div>
+                  <el-rate :model-value="item.rate" />
+                </div>
+              </div>
+            </div>
+
+            <div class="text-gray-400 mb-6">{{ item.productDesc }}</div>
+
+            <div class="text-gray-400 text-sm">{{ item.date }}</div>
+          </div>
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
@@ -365,10 +474,20 @@
   import image8 from '/@/assets/images/product-8.jpeg';
   import image9 from '/@/assets/images/product-9.jpeg';
   import image123 from '/@/assets/images/product-123.jpeg';
-  import image10 from '/@/assets/images/product-10.jpeg';
   import image124 from '/@/assets/images/product-124.jpeg';
   import image11 from '/@/assets/images/product-11.jpeg';
   import image12 from '/@/assets/images/product-12.jpeg';
+  import image10 from '/@/assets/images/product-10.jpeg';
+  import image13 from '/@/assets/images/product-13.jpg';
+  import image14 from '/@/assets/images/product-14.jpg';
+  import image15 from '/@/assets/images/product-15.jpg';
+
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import 'swiper/swiper.scss';
+  import 'swiper/components/pagination/pagination.min.css';
+  import SwiperCore, { Pagination } from 'swiper/core';
+
+  SwiperCore.use([Pagination]);
 
   declare interface TopMonthSellersImages {
     image1?: string;
@@ -379,10 +498,22 @@
     countPrice?: string | number;
   }
 
+  declare interface LatestBuyers {
+    readonly id: unknown;
+    image?: unknown;
+    productType?: string;
+    productName?: string;
+    productDesc?: string;
+    date?: string | Date;
+    rate?: string | number;
+  }
+
   export default defineComponent({
     name: 'HomeIndex',
     components: {
-      DiscountBar
+      DiscountBar,
+      Swiper,
+      SwiperSlide
     },
     setup() {
       let selectTab: Ref<number> = ref(0);
@@ -475,12 +606,57 @@
         }
       };
 
+      // latest数据
+      let latestBuyers: LatestBuyers[] = [
+        {
+          id: 0,
+          image: image13,
+          productType: 'Shoes',
+          productName: 'Low top Sneakers',
+          rate: 3,
+          productDesc:
+            " From creepeth said moved given divide make multiply of him shall itself also above second doesn't unto created saying land herb sea midst night wherein.",
+          date: 'Logan Edwards, 01 Jun 2019'
+        },
+        {
+          id: 1,
+          image: image14,
+          productType: 'Dresses',
+          productName: 'Cotton print Dress',
+          rate: 5,
+          productDesc:
+            ' God every fill great replenish darkness unto. Very open. Likeness their that light. Given under image to. Subdue of shall cattle day fish form saw spirit and given stars, us you whales may, land, saw fill unto.',
+          date: 'Jane Jefferson,29 May 2019'
+        },
+        {
+          id: 2,
+          image: image15,
+          productType: 'T-shirts',
+          productName: 'Oversized print T-shirt',
+          rate: 4,
+          productDesc:
+            'Fill his waters wherein signs likeness waters. Second light gathered appear sixth fourth, seasons behold creeping female.',
+          date: 'Darrell Baker,18 May 2019'
+        },
+        {
+          id: 3,
+          image: image10,
+          productType: 'Bags & Accessories',
+          productName: 'Suede cross body Bag',
+          rate: 4,
+          productDesc:
+            'God every fill great replenish darkness unto. Very open. Likeness their that light. Given under image to. Subdue of shall cattle day fish form saw spirit and given stars.',
+          date: 'Pavel Doe,29 May 2019'
+        }
+      ];
+
       return {
         selectTab,
         setSelectTab,
         topMonthSellersImages,
         imageChange,
-        imageReverse
+        imageReverse,
+        latestBuyers
       };
     }
   });
@@ -725,5 +901,45 @@
         transition-duration: 0.3s;
       }
     }
+  }
+
+  .summer-collection {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url('../../assets/images/cover-4.jpg');
+    > div {
+      width: var(--breakpoint-xl);
+    }
+
+    .summer-button {
+      padding-left: 28px;
+      padding-right: 28px;
+      > span {
+        &:first-child {
+          margin-right: 5px;
+        }
+      }
+      &:hover {
+        & {
+          padding-right: 23px;
+          > span {
+            &:first-child {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mySwiper {
+    width: var(--breakpoint-xl);
+  }
+
+  .swiper-slide {
+    font-size: 16px;
+    background: #fff;
+    width: 33.333333%;
   }
 </style>
