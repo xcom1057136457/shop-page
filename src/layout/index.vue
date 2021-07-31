@@ -284,7 +284,7 @@
                           items-center
                           justify-center
                           w-full
-                          h-auto h-full
+                          h-full
                           overflow-hidden
                           rounded
                           cursor-pointer
@@ -538,6 +538,11 @@
 </script>
 
 <style scoped lang="scss">
+  ol,
+  ul,
+  dl {
+    margin-bottom: 0;
+  }
   .top-nav {
     width: 100%;
     background-color: #f5f5f5;

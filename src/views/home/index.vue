@@ -347,7 +347,11 @@
       </div>
 
       <div class="mt-7 text-center discover-me">
-        <a href="javascript:;" class="relative">Discover more</a>
+        <a
+          href="javascript:;"
+          class="relative text-black hover:text-black text-base"
+          >Discover more</a
+        >
       </div>
     </div>
 
