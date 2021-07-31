@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
 import viteCompression from 'vite-plugin-compression';
-import styleImport from 'vite-plugin-style-import';
+import ViteComponents, { AntDesignVueResolver } from 'vite-plugin-components';
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
@@ -13,21 +13,8 @@ export default defineConfig({
   plugins: [
     vue(),
     viteCompression(),
-    styleImport({
-      libs: [
-        {
-          libraryName: 'element-plus',
-          esModule: true,
-          ensureStyleFile: true,
-          resolveStyle: (name) => {
-            name = name.slice(3);
-            return `element-plus/packages/theme-chalk/src/${name}.scss`;
-          },
-          resolveComponent: (name) => {
-            return `element-plus/lib/${name}`;
-          }
-        }
-      ]
+    ViteComponents({
+      customComponentResolvers: [AntDesignVueResolver()]
     })
   ],
   resolve: {
@@ -44,7 +31,7 @@ export default defineConfig({
       }
     ]
   },
-  base: './',
+  base: '/',
   server: {
     open: true,
     host: true,
@@ -56,11 +43,4 @@ export default defineConfig({
       }
     }
   }
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `@import './src/styles/global.scss';`
-  //     }
-  //   }
-  // }
 });

@@ -447,7 +447,7 @@
                 <div class="text-sm text-gray-400"> {{ item.productType }}</div>
                 <div class="text-base font-bold">{{ item.productName }}</div>
                 <div>
-                  <el-rate :model-value="item.rate" />
+                  <a-rate :value="item.rate" disabled />
                 </div>
               </div>
             </div>
@@ -490,6 +490,7 @@
   SwiperCore.use([Pagination]);
 
   declare interface TopMonthSellersImages {
+    id?: any;
     image1?: string;
     image2?: string;
     goodsType?: string;
@@ -499,8 +500,8 @@
   }
 
   declare interface LatestBuyers {
-    readonly id: unknown;
-    image?: unknown;
+    readonly id: any;
+    image?: any;
     productType?: string;
     productName?: string;
     productDesc?: string;
@@ -874,11 +875,37 @@
       flex: 0 0 25%;
     }
     .hover-show {
+      > div {
+        > span {
+          animation-name: iconMove;
+          &:nth-child(1) {
+            animation-duration: 0.2s;
+          }
+
+          &:nth-child(2) {
+            animation-duration: 0.4s;
+          }
+
+          &:nth-child(3) {
+            animation-duration: 0.6s;
+          }
+        }
+      }
       &:hover {
         .card-actions {
           display: flex;
         }
       }
+    }
+  }
+
+  @keyframes iconMove {
+    from {
+      transform: translateY(100%);
+    }
+
+    to {
+      transform: translateY(0);
     }
   }
 

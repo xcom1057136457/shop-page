@@ -136,6 +136,7 @@
                   absolute
                   z-20
                   hidden
+                  p-4
                   text-sm
                   font-normal
                   bg-white
@@ -144,7 +145,6 @@
                   top-full
                   -left-6
                   -right-20
-                  p-4
                 "
               >
                 <div class="py-2 pl-2 cursor-pointer">Default</div>
@@ -158,7 +158,7 @@
               </div>
             </li>
             <li class="flex items-center h-full px-4 py-6 nav-float">
-              <span class="font-semibold cursor-pointer hover:text-red-500"
+              <span class="font-semibold cursor-pointer h over:text-red-500"
                 >Catalog</span
               >
               <div
@@ -301,23 +301,23 @@
                 </div>
               </div>
             </li>
-            <li class="px-4 relative py-6 nav-float">
+            <li class="relative px-4 py-6 nav-float">
               <span class="font-semibold cursor-pointer hover:text-red-500"
                 >Shop</span
               >
 
               <div
                 class="
-                  nav-float-item
                   absolute
-                  top-full
-                  bg-white
-                  -left-60
                   z-20
+                  hidden
                   text-sm
                   font-normal
+                  bg-white
                   border border-gray-200
-                  hidden
+                  nav-float-item
+                  top-full
+                  -left-60
                 "
                 style="min-width: 650px"
               >
@@ -396,7 +396,7 @@
                 </div>
               </div>
             </li>
-            <li class="px-4 relative py-2 nav-float">
+            <li class="relative px-4 py-2 nav-float">
               <span class="font-semibold cursor-pointer hover:text-red-500"
                 >Pages</span
               >
@@ -406,6 +406,7 @@
                   absolute
                   z-20
                   hidden
+                  p-4
                   text-sm
                   font-normal
                   bg-white
@@ -414,7 +415,6 @@
                   top-full
                   -left-6
                   -right-20
-                  p-4
                 "
               >
                 <div class="py-2 pl-2 cursor-pointer">About</div>
@@ -425,7 +425,7 @@
                 <div class="py-2 pl-2 cursor-pointer">404</div>
               </div>
             </li>
-            <li class="px-4 relative py-2 nav-float">
+            <li class="relative px-4 py-2 nav-float">
               <span class="font-semibold cursor-pointer hover:text-red-500"
                 >Blog</span
               >
@@ -435,6 +435,7 @@
                   absolute
                   z-10
                   hidden
+                  p-4
                   text-sm
                   font-normal
                   bg-white
@@ -443,7 +444,6 @@
                   top-full
                   -left-6
                   -right-20
-                  p-4
                 "
               >
                 <div class="py-2 pl-2 cursor-pointer">Blog</div>
@@ -510,7 +510,11 @@
       </div>
     </div>
 
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
   </div>
 </template>
 

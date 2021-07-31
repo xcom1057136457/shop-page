@@ -20,7 +20,10 @@ const User: Module<any, any> = {
     }
   },
   actions: {
-    getUserInfo({ commit }: ActionContext<any, any>, params: Record<string, unknown>) {
+    getUserInfo(
+      { commit }: ActionContext<any, any>,
+      params: Record<string, unknown>
+    ): void {
       commit(MUTATIONS.SETUSERINFO, params);
     }
   }

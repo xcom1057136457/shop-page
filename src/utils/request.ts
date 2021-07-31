@@ -11,11 +11,6 @@ service.defaults.headers['Content-Type'] = 'application/json;charset=utf-8';
 
 service.interceptors.request.use(
   (config: AxiosRequestConfig) => {
-    // 是否需要设置 token
-    // const isToken = (config.headers || {}).isToken === false;
-    // if (getToken() && !isToken) {
-    //   config.headers['Authorization'] = 'Bearer ' + getToken(); // 让每个请求携带自定义token 请根据实际情况自行修改
-    // }
     // get请求映射params参数
     if (config.method === Methods.get && config.params) {
       let url = config.url + '?';
