@@ -1,21 +1,21 @@
 <template>
   <div>
     <Discount-Bar />
-    <div class="mt-4 flex top-image-wrapper">
+    <div class="flex mt-4 top-image-wrapper">
       <div
-        class="flex-1 flex justify-center items-center relative cursor-pointer"
+        class="relative flex items-center justify-center flex-1 cursor-pointer"
       >
-        <div class="text-4xl font-bold text-white z-10">Women</div>
+        <div class="z-10 text-4xl font-bold text-white">Women</div>
         <div
           class="
             absolute
-            bottom-8
-            bg-white
-            py-4
             z-10
-            image-btn
+            py-4
             text-sm
             font-semibold
+            bg-white
+            bottom-8
+            image-btn
           "
         >
           <span>Shop Women</span>
@@ -23,19 +23,19 @@
         </div>
       </div>
       <div
-        class="flex-1 flex justify-center items-center relative cursor-pointer"
+        class="relative flex items-center justify-center flex-1 cursor-pointer"
       >
-        <div class="text-4xl font-bold text-white z-10">Men</div>
+        <div class="z-10 text-4xl font-bold text-white">Men</div>
         <div
           class="
             absolute
-            bottom-8
-            bg-white
-            py-4
             z-10
-            image-btn
+            py-4
             text-sm
             font-semibold
+            bg-white
+            bottom-8
+            image-btn
           "
         >
           <span>Shop Men</span>
@@ -43,19 +43,19 @@
         </div>
       </div>
       <div
-        class="flex-1 flex justify-center items-center relative cursor-pointer"
+        class="relative flex items-center justify-center flex-1 cursor-pointer"
       >
-        <div class="text-4xl font-bold text-white z-10">Kids</div>
+        <div class="z-10 text-4xl font-bold text-white">Kids</div>
         <div
           class="
             absolute
-            bottom-8
-            bg-white
-            py-4
             z-10
-            image-btn
+            py-4
             text-sm
             font-semibold
+            bg-white
+            bottom-8
+            image-btn
           "
         >
           <span>Shop Kids</span>
@@ -64,58 +64,58 @@
       </div>
     </div>
 
-    <div class="py-6 top-tag flex border-b border-gray-200">
-      <div class="flex-1 flex justify-start">
+    <div class="flex py-6 border-b border-gray-200 top-tag">
+      <div class="flex justify-start flex-1">
         <div>
           <span
-            class="iconfont icon-car relative text-2xl text-red-400 mr-4"
+            class="relative mr-4 text-2xl text-red-400 iconfont icon-car"
           ></span>
         </div>
         <div>
-          <div class="uppercase text-xs font-bold mb-2">FREE SHIPPING</div>
+          <div class="mb-2 text-xs font-bold uppercase">FREE SHIPPING</div>
           <div class="text-sm text-gray-500">From all orders over $100</div>
         </div>
       </div>
 
-      <div class="flex-1 flex justify-start">
+      <div class="flex justify-start flex-1">
         <div>
           <span
-            class="iconfont icon-repeat relative text-base text-red-400 mr-4"
+            class="relative mr-4 text-base text-red-400 iconfont icon-repeat"
           ></span>
         </div>
         <div>
-          <div class="uppercase text-xs font-bold mb-2">FREE RETURNS</div>
+          <div class="mb-2 text-xs font-bold uppercase">FREE RETURNS</div>
           <div class="text-sm text-gray-500">Return money within 30 days</div>
         </div>
       </div>
 
-      <div class="flex-1 flex justify-start">
+      <div class="flex justify-start flex-1">
         <div>
           <span
-            class="iconfont icon-lock relative text-xl text-red-400 mr-4"
+            class="relative mr-4 text-xl text-red-400 iconfont icon-lock"
           ></span>
         </div>
         <div>
-          <div class="uppercase text-xs font-bold mb-2">SECURE SHOPPING</div>
+          <div class="mb-2 text-xs font-bold uppercase">SECURE SHOPPING</div>
           <div class="text-sm text-gray-500">You're in safe hands</div>
         </div>
       </div>
 
-      <div class="flex-1 flex justify-start">
+      <div class="flex justify-start flex-1">
         <div>
           <span
-            class="iconfont icon-tag relative text-xl text-red-400 mr-4"
+            class="relative mr-4 text-xl text-red-400 iconfont icon-tag"
           ></span>
         </div>
         <div>
-          <div class="uppercase text-xs font-bold mb-2">OVER 10,000 STYLES</div>
+          <div class="mb-2 text-xs font-bold uppercase">OVER 10,000 STYLES</div>
           <div class="text-sm text-gray-500">We have everything you need</div>
         </div>
       </div>
     </div>
 
     <div class="pt-12 new-collection">
-      <div class="flex items-center justify-center flex-col">
+      <div class="flex flex-col items-center justify-center">
         <div class="mb-3 text-gray-400">NEW COLLECTION</div>
         <h2 class="mb-4 text-3xl font-bold">Best Picks 2019</h2>
         <p class="mb-10 text-gray-500">
@@ -128,55 +128,55 @@
         <div class="flex">
           <div
             class="
-              mx-4
-              cursor-pointer
               flex flex-col
-              justify-center
               items-center
+              justify-center
+              mx-4
               text-white
+              cursor-pointer
               hover-arrow
             "
           >
-            <div class="text-2xl font-bold mb-2">Bags Collection</div>
+            <div class="mb-2 text-2xl font-bold">Bags Collection</div>
             <div>
               <span>Shop Now</span>
-              <span class="iconfont icon-cc-arrow-right relative"></span>
+              <span class="relative iconfont icon-cc-arrow-right"></span>
             </div>
           </div>
           <div
             class="
-              mx-4
-              cursor-pointer
+              relative
               flex flex-col
               justify-center
+              mx-4
               text-gray-700
+              cursor-pointer
               hover-arrow-1
-              relative
             "
           >
             <div class="absolute left-10">
-              <div class="text-2xl font-bold mb-2">Printed men’s Shirts</div>
+              <div class="mb-2 text-2xl font-bold">Printed men’s Shirts</div>
               <div>
                 <span> Shop Now </span>
-                <span class="iconfont icon-cc-arrow-right relative"></span>
+                <span class="relative iconfont icon-cc-arrow-right"></span>
               </div>
             </div>
 
             <div
               class="
                 absolute
+                flex flex-col
+                items-center
+                justify-center
+                text-white
+                bg-red-400
                 top-5
                 right-5
-                text-white
-                flex flex-col
-                justify-center
-                items-center
-                bg-red-400
               "
               style="border-radius: 50%; width: 96px; height: 96px"
             >
-              <div class="text-xs mb-2">Save</div>
-              <div class="mr-0 pr-0 text-2xl font-bold">30%</div>
+              <div class="mb-2 text-xs">Save</div>
+              <div class="pr-0 mr-0 text-2xl font-bold">30%</div>
             </div>
           </div>
         </div>
@@ -184,51 +184,51 @@
         <div class="flex mt-7">
           <div
             class="
-              mx-4
-              cursor-pointer
+              relative
               flex flex-col
               justify-center
+              mx-4
               text-gray-700
+              cursor-pointer
               hover-arrow-1
-              relative
             "
           >
             <div class="absolute left-10">
-              <div class="text-2xl font-bold mb-2">Basic women’s Dresses</div>
+              <div class="mb-2 text-2xl font-bold">Basic women’s Dresses</div>
               <div>
                 <span> Shop Now </span>
-                <span class="iconfont icon-cc-arrow-right relative"></span>
+                <span class="relative iconfont icon-cc-arrow-right"></span>
               </div>
             </div>
           </div>
           <div
             class="
-              mx-4
-              cursor-pointer
               flex flex-col
-              justify-center
               items-center
+              justify-center
+              mx-4
               text-white
+              cursor-pointer
               hover-arrow
             "
           >
-            <div class="text-2xl font-bold mb-2">Sweatshirts</div>
+            <div class="mb-2 text-2xl font-bold">Sweatshirts</div>
             <div>
               <span> Shop Now </span>
-              <span class="iconfont icon-cc-arrow-right relative"></span>
+              <span class="relative iconfont icon-cc-arrow-right"></span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="py-24 top-month-sellers mx-auto my-0">
-      <div class="mb-4 text-center text-3xl font-semibold"
+    <div class="py-24 mx-auto my-0 top-month-sellers">
+      <div class="mb-4 text-3xl font-semibold text-center"
         >Top month Sellers</div
       >
 
       <div>
-        <ul class="flex justify-center items-center text-base mb-10">
+        <ul class="flex items-center justify-center mb-10 text-base">
           <li
             class="px-4 py-2 cursor-pointer"
             :class="selectTab == 0 ? 'text-red-400 select-tab' : ''"
@@ -256,7 +256,7 @@
             class="px-4"
           >
             <div
-              class="top-image w-full h-auto cursor-pointer relative hover-show"
+              class="relative w-full h-auto cursor-pointer top-image hover-show"
               @mouseenter="imageChange(item, $event)"
               @mouseleave="imageReverse(item, $event)"
             >
@@ -268,76 +268,76 @@
 
               <div
                 class="
-                  card-actions
-                  p-5
                   absolute
                   inset-x-0
                   bottom-0
-                  justify-center
                   items-center
+                  justify-center
                   hidden
+                  p-5
+                  card-actions
                 "
               >
                 <span
                   class="
+                    flex
+                    items-center
+                    justify-center
+                    w-10
+                    h-10
+                    mr-2
+                    transition-all
+                    bg-white
+                    rounded-full
                     iconfont
                     icon-eye
-                    w-10
-                    h-10
-                    rounded-full
-                    bg-white
-                    mr-2
-                    flex
-                    justify-center
-                    items-center
                     hover:bg-red-400 hover:text-white
-                    transition-all
                   "
                 ></span>
                 <span
                   class="
+                    flex
+                    items-center
+                    justify-center
+                    w-10
+                    h-10
+                    mr-2
+                    transition-all
+                    bg-white
+                    rounded-full
                     iconfont
                     icon-shopcar
-                    w-10
-                    h-10
-                    rounded-full
-                    bg-white
-                    mr-2
-                    flex
-                    justify-center
-                    items-center
                     hover:bg-red-400 hover:text-white
-                    transition-all
                   "
                 ></span>
                 <span
                   class="
-                    iconfont
-                    icon-heart
+                    flex
+                    items-center
+                    justify-center
                     w-10
                     h-10
-                    rounded-full
-                    bg-white
-                    flex
-                    justify-center
-                    items-center
-                    hover:bg-red-400 hover:text-white
                     transition-all
+                    bg-white
+                    rounded-full
+                    iconfont
+                    icon-heart
+                    hover:bg-red-400 hover:text-white
                   "
                 ></span>
               </div>
             </div>
 
-            <div class="bottom-detail py-6">
+            <div class="py-6 bottom-detail">
               <div class="text-sm text-gray-500">{{ item.goodsType }}</div>
               <div class="text-base font-semibold">{{ item.goodsName }}</div>
-              <div class="text-gray-500 flex items-center">
+              <div class="flex items-center text-gray-500">
                 <span :class="item.countPrice ? 'line-through' : ''">{{
                   '$' + item.price
                 }}</span>
                 <span
                   v-if="item.countPrice"
-                  class="ml-2 text-base text-red-500 font-semibold"
+                  class="ml-2 text-base font-semibold text-red-500"
                   >{{ '$' + item.countPrice }}</span
                 >
               </div>
@@ -346,17 +346,17 @@
         </div>
       </div>
 
-      <div class="mt-7 text-center discover-me">
+      <div class="text-center mt-7 discover-me">
         <a
           href="javascript:;"
-          class="relative text-black hover:text-black text-base"
+          class="relative text-base text-black hover:text-black"
           >Discover more</a
         >
       </div>
     </div>
 
     <div class="py-24 summer-collection">
-      <div class="mx-auto my-0 flex">
+      <div class="flex mx-auto my-0">
         <div class="flex-1"></div>
         <div class="flex-1">
           <h3 class="mb-8 text-3xl font-bold">
@@ -364,37 +364,37 @@
             <br />
             Summer Collection
           </h3>
-          <div class="mb-12 flex items-start">
+          <div class="flex items-start mb-12">
             <div>
-              <div class="text-5xl text-red-500 mb-2">0-205</div>
-              <div class="uppercase text-center text-gray-600 text-xs font-bold"
+              <div class="mb-2 text-5xl text-red-500">0-205</div>
+              <div class="text-xs font-bold text-center text-gray-600 uppercase"
                 >DAYS</div
               >
             </div>
 
-            <div class="text-5xl text-red-500 px-4">:</div>
+            <div class="px-4 text-5xl text-red-500">:</div>
 
             <div>
-              <div class="text-5xl text-red-500 mb-2">0-24</div>
-              <div class="uppercase text-center text-gray-600 text-xs font-bold"
+              <div class="mb-2 text-5xl text-red-500">0-24</div>
+              <div class="text-xs font-bold text-center text-gray-600 uppercase"
                 >HOURS</div
               >
             </div>
 
-            <div class="text-5xl text-red-500 px-4">:</div>
+            <div class="px-4 text-5xl text-red-500">:</div>
 
             <div>
-              <div class="text-5xl text-red-500 mb-2">0-48</div>
-              <div class="uppercase text-center text-gray-600 text-xs font-bold"
+              <div class="mb-2 text-5xl text-red-500">0-48</div>
+              <div class="text-xs font-bold text-center text-gray-600 uppercase"
                 >MINUTES</div
               >
             </div>
 
-            <div class="text-5xl text-red-500 px-4">:</div>
+            <div class="px-4 text-5xl text-red-500">:</div>
 
             <div>
-              <div class="text-5xl text-red-500 mb-2">0-23</div>
-              <div class="uppercase text-center text-gray-600 text-xs font-bold"
+              <div class="mb-2 text-5xl text-red-500">0-23</div>
+              <div class="text-xs font-bold text-center text-gray-600 uppercase"
                 >SECONDS</div
               >
             </div>
@@ -402,26 +402,26 @@
           <div
             class="
               inline-block
-              bg-black
               py-3
               text-white
+              transition-all
+              bg-black
               cursor-pointer
               summer-button
-              transition-all
             "
           >
             <span class="transition-all">Shop Now</span>
-            <span class="iconfont icon-cc-arrow-right ml-3"></span>
+            <span class="ml-3 iconfont icon-cc-arrow-right"></span>
           </div>
         </div>
       </div>
     </div>
 
     <div class="py-24">
-      <div class="uppercase text-sm text-gray-500 font-bold text-center mb-4"
+      <div class="mb-4 text-sm font-bold text-center text-gray-500 uppercase"
         >WHAT BUYERS SAY</div
       >
-      <div class="text-4xl text-black font-bold text-center mb-16"
+      <div class="mb-16 text-4xl font-bold text-center text-black"
         >Latest buyers Reviews</div
       >
       <swiper
@@ -431,43 +431,81 @@
           clickable: true
         }"
         :spaceBetween="30"
-        class="mySwiper h-full mx-auto my-0 px-1"
+        class="mx-auto my-0 mySwiper"
       >
-        <swiper-slide
-          v-for="item in latestBuyers"
-          :key="item.id"
-          class="border border-gray-200 p-6"
-        >
-          <div>
-            <div class="top-detail flex mb-6">
-              <div
-                class="left-image overflow-hidden mr-4"
-                style="width: 69px; height: 69px"
-              >
-                <img :src="item.image" alt="" class="h-full w-full" />
-              </div>
+        <swiper-slide v-for="item in latestBuyers" :key="item.id">
+          <div style="height: 400px">
+            <div class="p-6 border border-gray-200">
+              <div class="flex mb-6 top-detail">
+                <div
+                  class="mr-4 overflow-hidden left-image"
+                  style="width: 69px; height: 69px"
+                >
+                  <img :src="item.image" alt="" class="w-full h-full" />
+                </div>
 
-              <div class="right-detail ml-4 flex flex-col justify-between">
-                <div class="text-sm text-gray-400"> {{ item.productType }}</div>
-                <div class="text-base font-bold">{{ item.productName }}</div>
-                <div>
-                  <a-rate :value="item.rate" disabled />
+                <div class="flex flex-col justify-between ml-4 right-detail">
+                  <div class="text-sm text-gray-400">
+                    {{ item.productType }}</div
+                  >
+                  <div class="text-base font-bold">{{ item.productName }}</div>
+                  <div>
+                    <a-rate :value="item.rate" disabled />
+                  </div>
                 </div>
               </div>
+
+              <div class="mb-6 text-gray-400">{{ item.productDesc }}</div>
+
+              <div class="text-sm text-gray-400">{{ item.date }}</div>
             </div>
-
-            <div class="text-gray-400 mb-6">{{ item.productDesc }}</div>
-
-            <div class="text-gray-400 text-sm">{{ item.date }}</div>
           </div>
         </swiper-slide>
       </swiper>
+    </div>
+
+    <div class="py-24" style="background-color: #f5f5f5">
+      <div class="mb-3 text-4xl font-bold text-center">@shopper</div>
+      <div class="text-xl text-center text-gray-400 mb-9"
+        >Appear, dry there darkness they're seas, dry waters.</div
+      >
+      <div class="flex items-center mx-auto my-0 image-wrapper">
+        <a
+          v-for="item in bottomDetail"
+          :key="item.id"
+          href="javascript:;"
+          class="relative mx-1"
+          :style="{ backgroundImage: `url(${item.image})` }"
+        >
+          <div
+            class="
+              absolute
+              inset-x-0 inset-y-0
+              items-center
+              justify-center
+              hidden
+              text-white
+            "
+          >
+            <div class="flex items-center mr-4">
+              <HeartOutlined />
+              <span class="ml-2">{{ item.like }}</span>
+            </div>
+
+            <div class="flex items-center">
+              <MessageOutlined />
+              <span class="ml-2">{{ item.comments }}</span>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-  import { defineComponent, reactive, Ref, ref } from 'vue';
+  import { defineComponent, reactive, Ref, ref, UnwrapRef } from 'vue';
+  import { HeartOutlined, MessageOutlined } from '@ant-design/icons-vue';
   import DiscountBar from '/@/components/Discount-Bar.vue';
   import image120 from '/@/assets/images/product-120.jpeg';
   import image5 from '/@/assets/images/product-5.jpeg';
@@ -485,6 +523,13 @@
   import image13 from '/@/assets/images/product-13.jpg';
   import image14 from '/@/assets/images/product-14.jpg';
   import image15 from '/@/assets/images/product-15.jpg';
+  import image16 from '/@/assets/images/product-16.jpg';
+  import image17 from '/@/assets/images/product-17.jpg';
+  import image18 from '/@/assets/images/product-18.jpg';
+  import image19 from '/@/assets/images/product-19.jpg';
+  import image20 from '/@/assets/images/product-20.jpg';
+  import image21 from '/@/assets/images/product-21.jpg';
+  // import pattersBg from '/@/assets/svg/patters.svg';
 
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import 'swiper/swiper.scss';
@@ -513,12 +558,21 @@
     rate?: string | number;
   }
 
+  declare interface BottomDetail {
+    id: number | string;
+    image: unknown;
+    like: string | number;
+    comments: string | number;
+  }
+
   export default defineComponent({
     name: 'HomeIndex',
     components: {
       DiscountBar,
       Swiper,
-      SwiperSlide
+      SwiperSlide,
+      MessageOutlined,
+      HeartOutlined
     },
     setup() {
       let selectTab: Ref<number> = ref(0);
@@ -655,13 +709,56 @@
         }
       ];
 
+      // 底部数据
+      let bottomDetail: UnwrapRef<BottomDetail[]> = reactive([
+        {
+          id: 0,
+          image: image16,
+          like: 248,
+          comments: 7
+        },
+        {
+          id: 1,
+          image: image17,
+          like: 248,
+          comments: 7
+        },
+        {
+          id: 2,
+          image: image18,
+          like: 248,
+          comments: 7
+        },
+        {
+          id: 3,
+          image: image19,
+          like: 248,
+          comments: 7
+        },
+        {
+          id: 4,
+          image: image20,
+          like: 248,
+          comments: 7
+        },
+        {
+          id: 5,
+          image: image21,
+          like: 248,
+          comments: 7
+        }
+      ]);
+
       return {
         selectTab,
         setSelectTab,
         topMonthSellersImages,
         imageChange,
         imageReverse,
-        latestBuyers
+        latestBuyers,
+        bottomDetail,
+        MessageOutlined,
+        HeartOutlined
       };
     }
   });
@@ -972,5 +1069,28 @@
     font-size: 16px;
     background: #fff;
     width: 33.333333%;
+  }
+
+  ::v-deep .swiper-pagination-bullet-active {
+    background-color: #ff6f61 !important;
+  }
+
+  .image-wrapper {
+    width: var(--breakpoint-xl);
+    > a {
+      flex: 1;
+      height: 178px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      &:hover {
+        > div {
+          display: flex;
+        }
+      }
+      > div {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    }
   }
 </style>
