@@ -8,8 +8,12 @@ for (const key in ModuleFiles) {
 
 export const constantRoutes: RouteRecordRaw[] = [
   {
-    path: '/',
-    redirect: '/home/index'
+    path: '/:catchAll*',
+    name: 'error',
+    component: () => import('/@/views/error/404.vue'),
+    meta: {
+      title: '404'
+    }
   },
   ...ModuleRoutes
 ];

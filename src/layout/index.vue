@@ -460,6 +460,7 @@
             class="px-4 cursor-pointer iconfont icon-search hover:text-red-500"
           ></span>
           <span
+            @click="$router.push({ name: 'Account' })"
             class="
               px-4
               text-xl
@@ -480,6 +481,7 @@
             "
           ></span>
           <span
+            @click="changeVisible"
             class="
               relative
               pl-4
@@ -510,6 +512,106 @@
       </div>
     </div>
 
+    <a-drawer
+      :title="`Your Cart (${shopCar.length})`"
+      placement="right"
+      :closable="true"
+      v-model:visible="visible"
+      :drawerStyle="{ display: 'flex', flexDirection: 'column' }"
+      :bodyStyle="{ flex: 1, padding: 0 }"
+      :headerStyle="{
+        padding: '24px 32px',
+        textAlign: 'center',
+        fontSize: '18px'
+      }"
+      width="470"
+    >
+      <div class="drawer-container flex flex-col">
+        <div class="top-goods flex-1 overflow-auto">
+          <div
+            v-for="item in shopCar"
+            :key="item.id"
+            class="p-8 border-b border-solid border-gray-200 flex items-center"
+          >
+            <div
+              class="left-image-box cursor-pointer mr-7"
+              :style="{ backgroundImage: `url(${item.image})` }"
+            ></div>
+            <div class="right-detail flex-1">
+              <div class="text-base font-bold mb-1">{{ item.name }}</div>
+              <div class="text-base text-gray-500 mb-6">{{
+                '$' + item.price
+              }}</div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <a-select
+                    v-model:value="item.total"
+                    :style="{ width: '59px' }"
+                  >
+                    <a-select-option
+                      v-for="selectItem in 3"
+                      :key="selectItem"
+                      :value="selectItem"
+                      >{{ selectItem }}</a-select-option
+                    >
+                  </a-select>
+                </div>
+                <a
+                  href="javascript:;"
+                  class="flex items-center text-sm text-gray-400"
+                >
+                  <CloseOutlined />
+                  <span class="ml-2">Remove</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-price">
+          <div
+            class="
+              flex
+              py-6
+              px-8
+              items-center
+              justify-between
+              text-base
+              bg-gray-100
+            "
+          >
+            <div>Subtotal</div>
+            <div>{{ '$' + totalCount }}</div>
+          </div>
+
+          <div class="p-8">
+            <div
+              class="
+                py-3
+                px-7
+                bg-gray-900
+                text-white text-base text-center
+                cursor-pointer
+              "
+              >Continue to Checkout</div
+            >
+
+            <div
+              class="
+                py-3
+                px-7
+                bg-gray-white
+                text-gray-900 text-base text-center
+                border border-gray-900
+                mt-2
+                cursor-pointer
+              "
+              >View Cart</div
+            >
+          </div>
+        </div>
+      </div>
+    </a-drawer>
+
     <router-view v-slot="{ Component }">
       <keep-alive>
         <component :is="Component" />
@@ -519,19 +621,69 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, Ref, ref } from 'vue';
+  import {
+    computed,
+    defineComponent,
+    reactive,
+    Ref,
+    ref,
+    UnwrapRef
+  } from 'vue';
+  import { ShopCar } from '/@/types/home.interface';
+  import image6 from '/@/assets/images/product-6.jpg';
+  import image10 from '/@/assets/images/product-10.jpg';
+  import { CloseOutlined } from '@ant-design/icons-vue';
 
   export default defineComponent({
     name: 'Layout',
+    components: {
+      CloseOutlined
+    },
     setup() {
       let activetab: Ref<number> = ref(0);
       let setActiveTab = (value: number) => {
         activetab.value = value;
       };
 
+      let visible: Ref<boolean> = ref(false);
+
+      let changeVisible = () => {
+        visible.value = !visible.value;
+      };
+
+      let shopCar: UnwrapRef<ShopCar[]> = reactive([
+        {
+          id: 0,
+          image: image6,
+          name: 'Cotton floral print Dress',
+          price: '40.00',
+          total: 1
+        },
+        {
+          id: 1,
+          image: image10,
+          name: 'Suede cross body Bag',
+          price: '49.00',
+          total: 1
+        }
+      ]);
+
+      let totalCount = computed(() => {
+        let priceArr = shopCar.map((item: ShopCar) => item.price);
+        let sum = priceArr.reduce((total: number, value: unknown) => {
+          return (total += Number(value));
+        }, 0);
+
+        return parseFloat(sum as unknown as string).toFixed(2);
+      });
+
       return {
         activetab,
-        setActiveTab
+        setActiveTab,
+        visible,
+        changeVisible,
+        shopCar,
+        totalCount
       };
     }
   });
@@ -693,5 +845,21 @@
       transition-property: all;
       transition-duration: 0.1s;
     }
+  }
+
+  .top-goods {
+    > div {
+      > .left-image-box {
+        width: 114px;
+        height: 135px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  .drawer-container {
+    height: calc(100vh - 71px);
   }
 </style>

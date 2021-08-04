@@ -529,7 +529,6 @@
   import image19 from '/@/assets/images/product-19.jpg';
   import image20 from '/@/assets/images/product-20.jpg';
   import image21 from '/@/assets/images/product-21.jpg';
-  // import pattersBg from '/@/assets/svg/patters.svg';
 
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import 'swiper/swiper.scss';
@@ -1072,7 +1071,7 @@
   }
 
   ::v-deep .swiper-pagination-bullet-active {
-    background-color: #ff6f61 !important;
+    background-color: $primary !important;
   }
 
   .image-wrapper {
