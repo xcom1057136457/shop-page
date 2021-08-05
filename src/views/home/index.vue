@@ -64,7 +64,9 @@
       </div>
     </div>
 
-    <div class="flex py-6 border-b border-gray-200 top-tag">
+    <div
+      class="flex py-6 border-b border-gray-200 top-tag container mx-auto my-0"
+    >
       <div class="flex justify-start flex-1">
         <div>
           <span
@@ -114,7 +116,7 @@
       </div>
     </div>
 
-    <div class="pt-12 new-collection">
+    <div class="pt-12 new-collection container mx-auto my-0">
       <div class="flex flex-col items-center justify-center">
         <div class="mb-3 text-gray-400">NEW COLLECTION</div>
         <h2 class="mb-4 text-3xl font-bold">Best Picks 2019</h2>
@@ -222,7 +224,7 @@
       </div>
     </div>
 
-    <div class="py-24 mx-auto my-0 top-month-sellers">
+    <div class="py-24 mx-auto my-0 top-month-sellers container">
       <div class="mb-4 text-3xl font-semibold text-center"
         >Top month Sellers</div
       >
@@ -356,7 +358,7 @@
     </div>
 
     <div class="py-24 summer-collection">
-      <div class="flex mx-auto my-0">
+      <div class="flex mx-auto my-0 container">
         <div class="flex-1"></div>
         <div class="flex-1">
           <h3 class="mb-8 text-3xl font-bold">
@@ -431,7 +433,7 @@
           clickable: true
         }"
         :spaceBetween="30"
-        class="mx-auto my-0 mySwiper"
+        class="mx-auto my-0 mySwiper container"
       >
         <swiper-slide v-for="item in latestBuyers" :key="item.id">
           <div style="height: 400px">
@@ -469,7 +471,7 @@
       <div class="text-xl text-center text-gray-400 mb-9"
         >Appear, dry there darkness they're seas, dry waters.</div
       >
-      <div class="flex items-center mx-auto my-0 image-wrapper">
+      <div class="flex items-center mx-auto my-0 image-wrapper container">
         <a
           v-for="item in bottomDetail"
           :key="item.id"
@@ -821,8 +823,6 @@
   }
 
   .top-tag {
-    width: var(--breakpoint-xl);
-    margin: 0 auto;
     > div:first-child {
       > div {
         &:first-child {
@@ -835,8 +835,6 @@
   }
 
   .new-collection {
-    width: var(--breakpoint-xl);
-    margin: 0 auto;
     > div {
       &:first-child {
         width: 570px;
@@ -953,7 +951,6 @@
   }
 
   .top-month-sellers {
-    width: var(--breakpoint-xl);
     .select-tab {
       position: relative;
       &::after {
@@ -1035,9 +1032,6 @@
     background-size: cover;
     background-position: center center;
     background-image: url('../../assets/images/cover-4.jpg');
-    > div {
-      width: var(--breakpoint-xl);
-    }
 
     .summer-button {
       padding-left: 28px;
@@ -1060,10 +1054,6 @@
     }
   }
 
-  .mySwiper {
-    width: var(--breakpoint-xl);
-  }
-
   .swiper-slide {
     font-size: 16px;
     background: #fff;
@@ -1075,7 +1065,6 @@
   }
 
   .image-wrapper {
-    width: var(--breakpoint-xl);
     > a {
       flex: 1;
       height: 178px;

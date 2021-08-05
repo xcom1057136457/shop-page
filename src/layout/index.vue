@@ -1,7 +1,7 @@
 <template>
-  <div class="playout-wraper">
+  <div class="layout-wraper">
     <div class="px-1 py-1 top-nav">
-      <div class="flex justify-between top-nav-inner">
+      <div class="flex justify-between top-nav-inner container mx-auto my-0">
         <div class="flex items-center top-nav-left-wrapper">
           <div class="h-full mr-2">
             <span class="text-xl iconfont icon-car"></span>
@@ -89,7 +89,7 @@
             <span class="mr-3 text-xs font-semibold">English</span>
             <span class="mr-3 text-xs iconfont icon-xiangxiafanye"></span>
 
-            <div class="absolute inset-x-0 z-10 flot-info top-full">
+            <div class="absolute inset-x-0 z-10 flot-info top-full hidden">
               <div class="flex items-center justify-center py-2 text-xs"
                 >English</div
               >
@@ -123,8 +123,22 @@
     </div>
 
     <div class="relative">
-      <div class="flex items-center justify-between center-nav">
-        <div class="text-2xl font-bold">Shopper.</div>
+      <div
+        class="
+          items-center
+          justify-between
+          center-nav
+          container
+          mx-auto
+          my-0
+          flex
+        "
+      >
+        <div
+          class="text-2xl font-bold cursor-pointer"
+          @click="$router.push('/')"
+          >Shopper.</div
+        >
         <div class="flex items-center h-full">
           <ul class="flex items-center justify-center h-full">
             <li class="relative px-4 py-2 nav-float">
@@ -185,7 +199,7 @@
                       border-bottom-full
                     "
                   >
-                    <div class="center-float-wrapper">
+                    <div class="center-float-wrapper container mx-auto my-0">
                       <span
                         class="inline-block py-4 mr-3 uppercase cursor-pointer"
                         @click="setActiveTab(0)"
@@ -207,7 +221,7 @@
                     </div>
                   </div>
 
-                  <div class="py-5 center-nav">
+                  <div class="py-5 center-nav container mx-auto my-0 flex">
                     <div class="flex justify-between left-detail-wrapper pr-9">
                       <div>
                         <div class="mb-5 text-base font-semibold">Clothing</div>
@@ -289,6 +303,7 @@
                           rounded
                           cursor-pointer
                           image-box
+                          bg-no-repeat bg-cover
                         "
                       >
                         <div class="z-10 py-4 text-sm bg-white">
@@ -471,6 +486,7 @@
             "
           ></span>
           <span
+            @click="$router.push({ name: 'Account' })"
             class="
               px-4
               text-xl
@@ -617,6 +633,99 @@
         <component :is="Component" />
       </keep-alive>
     </router-view>
+
+    <footer
+      class="foot-wrapper bg-no-repeat bg-cover"
+      style="background-color: #1f1f1f"
+    >
+      <div class="py-24 border-b" style="border-color: #303030">
+        <div class="container text-white">
+          <div class="mb-8 text-2xl text-center"
+            >Want style Ideas and Treats?</div
+          >
+          <div class="mb-20 text-base text-center">
+            <input
+              type="text"
+              placeholder="Enter Email *"
+              class="py-4 px-8 text-white mr-3"
+              style="
+                background-color: #303030;
+                border-color: #303030;
+                min-width: 382px;
+              "
+            />
+            <button
+              class="py-4 px-8 text-whit"
+              style="background-color: #525252; border-color: #525252"
+              >Subscribe</button
+            >
+          </div>
+          <div class="flex items-start">
+            <div class="flex-1">
+              <div class="text-3xl">Shopper.</div>
+              <div>
+                <span
+                  class="
+                    mr-2
+                    text-2xl
+                    cursor-pointer
+                    iconfont
+                    icon-weibiaoti502
+                    text-ba
+                  "
+                ></span>
+                <span
+                  class="mr-3 cursor-pointer iconfont icon-twitter text-ba"
+                ></span>
+                <span
+                  class="mr-3 cursor-pointer iconfont icon-ins text-ba"
+                ></span>
+                <span
+                  class="cursor-pointer iconfont icon-wechat text-ba"
+                ></span>
+              </div>
+            </div>
+
+            <div
+              class="flex-1"
+              v-for="(item, index) in footDetail"
+              :key="index"
+            >
+              <ul>
+                <li
+                  v-for="(actItem, actIndex) in item"
+                  :key="actItem"
+                  :class="
+                    actIndex == 0
+                      ? 'text-sm mb-4 font-bold'
+                      : 'text-base text-ba cursor-pointer'
+                  "
+                  >{{ actItem }}</li
+                >
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-6">
+        <div
+          class="container flex justify-between items-center"
+          style="color: #767676"
+        >
+          <div class="text-sm">
+            © 2019 All rights reserved. Designed by Unvab.
+          </div>
+          <div class="flex items-center">
+            <img src="../assets/svg/mastercard.svg" alt="" class="mr-2" />
+            <img src="../assets/svg/visa.svg" alt="" class="mr-2" />
+            <img src="../assets/svg/amex.svg" alt="" class="mr-2" />
+            <img src="../assets/svg/paypal.svg" alt="" class="mr-2" />
+            <img src="../assets/svg/maestro.svg" alt="" class="mr-2" />
+            <img src="../assets/svg/klarna.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -677,13 +786,33 @@
         return parseFloat(sum as unknown as string).toFixed(2);
       });
 
+      let footDetail: any[] = reactive([
+        ['Support', 'Contact Us', 'FAQs', 'Size Guide', 'Shipping & Returns'],
+        [
+          'Shop',
+          "Men's Shopping",
+          "Women's Shopping",
+          "Kids' Shopping",
+          'Discounts'
+        ],
+        [
+          'Company',
+          'Our Story',
+          'Careers',
+          'Terms & Conditions',
+          'Privacy & Cookie policy'
+        ],
+        ['Contact', '1-202-555-0105', '1-202-555-0106', 'help@shopper.com']
+      ]);
+
       return {
         activetab,
         setActiveTab,
         visible,
         changeVisible,
         shopCar,
-        totalCount
+        totalCount,
+        footDetail
       };
     }
   });
@@ -698,10 +827,6 @@
   .top-nav {
     width: 100%;
     background-color: #f5f5f5;
-    .top-nav-inner {
-      width: var(--breakpoint-xl);
-      margin: 0 auto;
-    }
   }
 
   .float-parent {
@@ -750,20 +875,12 @@
   }
 
   .center-nav {
-    width: var(--breakpoint-xl);
-    margin: 0 auto;
-    display: flex;
     .left-detail-wrapper {
       flex: 1;
     }
     .right-image-wrapper {
       flex: 0 0 33%;
     }
-  }
-
-  .center-float-wrapper {
-    width: var(--breakpoint-xl);
-    margin: 0 auto;
   }
 
   .nav-float {
@@ -806,8 +923,6 @@
 
   .image-box {
     background-image: url('../assets/images/product-110.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
     > div {
       padding-left: 20px;
       padding-right: 20px;
@@ -861,5 +976,13 @@
 
   .drawer-container {
     height: calc(100vh - 71px);
+  }
+
+  .foot-wrapper {
+    background-image: url('../assets/svg/patters.svg');
+  }
+
+  .text-ba {
+    color: #bababa !important;
   }
 </style>

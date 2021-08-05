@@ -4,6 +4,7 @@
   list-style: none;
   box-sizing: border-box;
   font-family: Jost !important;
+  outline: none;
 }
 
 @font-face {
@@ -11,15 +12,6 @@
   src: url("../assets/fonts/Jost-Regular.ttf");
 }
 
-:root {
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-}
 
 .icon {
   width: 1em; height: 1em;

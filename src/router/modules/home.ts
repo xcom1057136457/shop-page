@@ -5,14 +5,14 @@ const Home: RouteRecordRaw[] = [
   {
     path: '',
     component: Layout,
-    redirect: '/home/index',
+    redirect: '/home',
     children: [
       {
-        path: '/home/index',
+        path: '/home',
         name: 'Home',
         component: () => import('/@/views/home/index.vue'),
         meta: {
-          title: '首页'
+          title: 'Home'
         }
       },
       {
@@ -20,7 +20,7 @@ const Home: RouteRecordRaw[] = [
         name: 'Account',
         component: () => import('/@/views/account/index.vue'),
         meta: {
-          title: '账号'
+          title: 'Account'
         }
       }
     ]

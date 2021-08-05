@@ -1,7 +1,7 @@
 <template>
   <div class="border-t border-gray-200">
-    <nav class="py-5 px-0">
-      <div class="container-self mx-auto">
+    <nav class="py-5 px-4">
+      <div class="container mx-auto">
         <ul class="flex items-center text-sm text-gray-500">
           <li class="mr-3 cursor-pointer">Home</li>
           <li class="mr-3 flex items-center">
@@ -13,10 +13,10 @@
     </nav>
 
     <div class="pt-8 pb-24 px-0">
-      <div class="text-3xl mb-16 font-bold text-center">My Account</div>
-      <div class="container-self mx-auto flex">
-        <div class="flex_253 mr-24">
-          <ul class="left-nav-box">
+      <div class="text-3xl mb-16 font-bold text-center px-4">My Account</div>
+      <div class="mx-auto flex container px-4">
+        <div class="flex-1">
+          <ul class="left-nav-box" style="width: 253px">
             <li
               v-for="item in navList"
               :key="item.name"
@@ -40,7 +40,7 @@
           </ul>
         </div>
 
-        <div class="flex-1">
+        <div class="flex_760">
           <component :is="activeComponent" />
         </div>
       </div>
@@ -114,8 +114,8 @@
 </script>
 
 <style lang="scss" scoped>
-  .flex_253 {
-    flex: 0 0 253px;
+  .flex_760 {
+    flex: 0 0 760px;
   }
   .left-nav-box {
     > li {
