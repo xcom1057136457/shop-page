@@ -358,9 +358,8 @@
     </div>
 
     <div class="py-24 summer-collection">
-      <div class="flex mx-auto my-0 container">
-        <div class="flex-1"></div>
-        <div class="flex-1">
+      <div class="flex mx-auto my-0 container justify-end">
+        <div>
           <h3 class="mb-8 text-3xl font-bold">
             Get -50% from
             <br />

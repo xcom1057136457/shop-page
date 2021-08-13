@@ -135,7 +135,12 @@
         "
       >
         <div
-          class="text-2xl font-bold cursor-pointer"
+          class="
+            text-2xl
+            font-bold
+            cursor-pointer
+            animate__animated animate__bounce
+          "
           @click="$router.push('/')"
           >Shopper.</div
         >
@@ -644,25 +649,29 @@
             >Want style Ideas and Treats?</div
           >
           <div class="mb-20 text-base text-center">
-            <input
-              type="text"
-              placeholder="Enter Email *"
-              class="py-4 px-8 text-white mr-3"
-              style="
-                background-color: #303030;
-                border-color: #303030;
-                min-width: 382px;
-              "
-            />
-            <button
-              class="py-4 px-8 text-whit"
-              style="background-color: #525252; border-color: #525252"
-              >Subscribe</button
-            >
+            <form action="javascript:;">
+              <input
+                type="text"
+                placeholder="Enter Email *"
+                class="py-4 px-8 text-white mr-3"
+                required
+                style="
+                  background-color: #303030;
+                  border-color: #303030;
+                  min-width: 382px;
+                "
+              />
+              <button
+                class="py-4 px-8 text-whit"
+                style="background-color: #525252; border-color: #525252"
+                type="submit"
+                >Subscribe</button
+              >
+            </form>
           </div>
           <div class="flex items-start">
             <div class="flex-1">
-              <div class="text-3xl">Shopper.</div>
+              <div class="text-3xl select-none">Shopper.</div>
               <div>
                 <span
                   class="
